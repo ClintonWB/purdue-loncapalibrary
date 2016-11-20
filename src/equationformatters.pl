@@ -1,3 +1,21 @@
+=head1 texsum
+
+Format a sum of elements, dropping +-1 coefficients and 0 terms appropriately 
+
+=head2 SYNOPSIS
+
+    &texsum([1,2,0,4],['a','b','c']) # eq 'a+2b+4'
+
+=head2 USAGE
+
+    &texsum(\@coeffs, \@basis)
+
+Given an array reference to a list of numerical coefficients,
+and an array reference to a list of string summands,
+formats the string for display in a tex field.
+
+=cut
+
 sub texsum(\@\@) {
     my $coeffs = $_[0];
     my $basis = $_[1];
@@ -47,9 +65,10 @@ A polynomial formatter for LonCapa
 
     &texpoly(\@coeffs, $base)
 
-Takes an array reference to a list of coefficients, 
-and the (optional) base of the polynomial.
-Returns LaTeX for the polynomial.
+Takes an array reference to a list of numerical coefficients
+in decreasing order of degree,
+and the (optional) variable of the single-variable polynomial,
+returns LaTeX for the polynomial.
 
 =cut
 
