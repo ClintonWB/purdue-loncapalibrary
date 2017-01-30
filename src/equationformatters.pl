@@ -177,10 +177,3 @@ print &texpoly([2,1]) eq '2x+1' ? "ok 5\n" : "not ok 5\n";
 print &texpoly([-2,1]) eq '-2x+1' ? "ok 6\n" : "not ok 6\n";
 print &texpoly([-1..3]) eq '-x^{4}+x^{2}+2x+3' ? "ok 7\n" : "not ok 7\n";
 print &texpoly([-1..3],'z') eq '-z^{4}+z^{2}+2z+3' ? "ok 8\n" : "not ok 8\n";
-
-print "commify 1..5\n";
-print &commify(1) eq '1' ? "ok 1\n" : "not ok 1\n";
-print &commify(1234) eq '1,234' ? "ok 2\n" : "not ok 2\n";
-print &commify(1234.56) eq '1,234.56' ? "ok 3\n" : "not ok 3\n";
-print &commify(4321.1234) eq '4,321.1234' ? "ok 4\n" : "not ok 4\n";
-print &commify(1234567890.01) eq '1,234,567,890.01' ? "ok 5\n" : "not ok 5\n";
