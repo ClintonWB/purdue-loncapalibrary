@@ -125,38 +125,6 @@ sub texpoly(\@;$) {
     return &texsum($coeffs,$basis);
 }
 
-=head1 commify
-
-Official perldoc version for comma-formatting integers and decimal numbers.
-
-=head2 SYNOPSIS
-
-    &commify(1234.5678) # eq '1,234.5678' 
-
-=head2 Description
-
- Adds commas between every third digit (counting from the ones place) to a integer, or to a decimal before the '.' 
-
-=head2 USAGE
-
-    &texsum($number)
-
-=over 4
-
-=item * number
-
-    A decimal or integer number.
-
-=back
-
-=cut
-
-sub commify {
-    local $_  = shift;
-    1 while s/^(-?\d+)(\d{3})/$1,$2/;
-    return $_;
-}
-
 # Tests
 print "texsum 1..8\n"; #1 to number of tests
 print &texsum([1],['a']) eq 'a' ? "ok 1\n" : "not ok 1\n";
